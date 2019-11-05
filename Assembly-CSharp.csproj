@@ -63,9 +63,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\FollowPlayer.cs" />
-    <Compile Include="Assets\Player.cs" />
-    <Compile Include="Assets\Rotator.cs" />
+    <Compile Include="Assets\Scripts\FollowPlayer.cs" />
+    <Compile Include="Assets\Scripts\Level.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Rotator.cs" />
+    <Compile Include="Assets\Scripts\Spawner.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/jenni/Documents/Unity Projects/arcade/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

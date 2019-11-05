@@ -132,11 +132,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ColorChanger (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4562030741315169487, guid: eff07cbf6457c5840812d0d546aec241,
-        type: 3}
-      propertyPath: m_TagString
-      value: ColorChanger
-      objectReference: {fileID: 0}
     - target: {fileID: 4562030741315169481, guid: eff07cbf6457c5840812d0d546aec241,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -346,11 +341,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ColorChanger (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 4562030741315169487, guid: eff07cbf6457c5840812d0d546aec241,
-        type: 3}
-      propertyPath: m_TagString
-      value: ColorChanger
-      objectReference: {fileID: 0}
     - target: {fileID: 4562030741315169481, guid: eff07cbf6457c5840812d0d546aec241,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -516,11 +506,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ColorChanger (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4562030741315169487, guid: eff07cbf6457c5840812d0d546aec241,
-        type: 3}
-      propertyPath: m_TagString
-      value: ColorChanger
       objectReference: {fileID: 0}
     - target: {fileID: 4562030741315169481, guid: eff07cbf6457c5840812d0d546aec241,
         type: 3}
@@ -960,6 +945,11 @@ PrefabInstance:
     - target: {fileID: 4562030741315169481, guid: eff07cbf6457c5840812d0d546aec241,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4562030741315169480, guid: eff07cbf6457c5840812d0d546aec241,
+        type: 3}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

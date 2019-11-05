@@ -9,6 +9,8 @@ TagManager:
   - Purple
   - Pink
   - ColorChanger
+  - SmallCircle
+  - Level
   layers:
   - Default
   - TransparentFX
