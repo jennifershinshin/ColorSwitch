@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
         if(col.tag == "ColorChanger")
         {
             SetRandomColor();
-            Destroy(col.gameObject);
+             Destroy(GameObject.FindWithTag("Level"));
             return;
         }
         if(col.tag != currentColor)

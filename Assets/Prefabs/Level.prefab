@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9038815226702753409}
   m_Layer: 0
   m_Name: Level
-  m_TagString: Untagged
+  m_TagString: Level
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8b9a9abdad0c424da574e48377c6f4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smallCirclePrefab: {fileID: 0}
+  colorChangerPrefab: {fileID: 0}
 --- !u!1001 &4346630360920045524
 PrefabInstance:
   m_ObjectHideFlags: 0

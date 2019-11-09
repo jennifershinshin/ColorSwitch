@@ -11,27 +11,33 @@ public class Level : MonoBehaviour
     public GameObject smallCirclePrefab;
     public GameObject colorChangerPrefab;
 
+    Vector3 newLevelPosition = new Vector3(0, 4, 0);
+
     public static Level Instance { get { return _instance; } }
 
     private void Awake()
     {
-        if (_instance != null && _instance != this)
+         if (_instance != null && _instance != this)
         {
             Destroy(this.gameObject);
+            Destroy(GameObject.FindWithTag("ColorChanger").GetComponent<Transform>());
+            Destroy(GameObject.FindWithTag("SmallCircle").GetComponent<Transform>());
         }
         else
         {
             _instance = this;
         }
-        //do i have to create its child objects
-        setColorChanger();
-        setSmallCircle();
+        //Should I instantiate level. or doesnt it already do it in Spawner. maybe move it to here as well..
+        //maybe that wouldnt make sense bc if its instantiated, awake runs.
+        //I may not need these bc i think if i instantiate level, the children will also be created
+        createColorChanger();
+        createSmallCircle();
     }
     private void Start()
     {
         
     }
-    void setColorChanger()
+    void createColorChanger()
     {
         if(GameObject.FindWithTag("ColorChanger"))
         {
@@ -39,7 +45,7 @@ public class Level : MonoBehaviour
         }
         else
         {
-            GameObject colorChangerGO = Instantiate(colorChangerPrefab) as GameObject;
+            GameObject colorChangerGO = Instantiate(colorChangerPrefab, this.transform.position + newLevelPosition, Quaternion.identity) as GameObject;
             colorChanger = colorChangerGO.GetComponent<Transform>();
         }
     }
@@ -49,7 +55,7 @@ public class Level : MonoBehaviour
         return colorChanger;
     }
 
-    void setSmallCircle()
+    void createSmallCircle()
     {
         if (GameObject.FindWithTag("SmallCircle"))
         {
@@ -57,7 +63,7 @@ public class Level : MonoBehaviour
         }
         else
         {
-            GameObject smallCircleGO = Instantiate(smallCirclePrefab) as GameObject;
+            GameObject smallCircleGO = Instantiate(smallCirclePrefab, this.transform.position + newLevelPosition, Quaternion.identity) as GameObject;
             smallCircle = smallCircleGO.GetComponent<Transform>();
         }
     }

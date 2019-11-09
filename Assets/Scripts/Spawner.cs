@@ -2,9 +2,12 @@
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject Level;
+    private GameObject Level;
+    
     public Transform camera;
     public Transform player;
+    public GameObject levelPrefab;
+
 
     private void Awake()
     {
@@ -18,25 +21,20 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!getColorChanger())
+        //TODO: check for Level. level must always be available except for when its not
+        if(!doesLevelExist())
         {
-            Debug.Log("nonono");
-            spawnLevel();
+            Instantiate(levelPrefab, player.position, Quaternion.identity);
+            Level = GameObject.FindWithTag("Level");
         }
     }
 
-    void spawnLevel()
+    bool doesLevelExist()
     {
-        //need position maybe before it gets destroyed. maybe at level's awake
-          Instantiate(Level, player.position, Quaternion.identity);
-    }
-
-    Transform getColorChanger()
-    {
-        return Level.GetComponent<Level>().getColorChanger();
-    }
-    Transform getSmallCircle ()
-    {
-        return Level.GetComponent<Level>().getSmallCircle();
+        if(Level == null)
+        {
+            return false;
+        }
+        return true;
     }
 }
