@@ -16,14 +16,15 @@ public class Level : MonoBehaviour
 
     public Level()
     {
-        currentState = new CurrentState();
+        currentState = new NextState();
     }
 
     public static Level Instance { get { return _instance; } }
 
     private void Awake()
     {
-         if (_instance != null && _instance != this)
+        currentState = new NextState();
+        if (_instance != null && _instance != this)
         {
             Destroy(this.gameObject);
             Destroy(GameObject.FindWithTag("ColorChanger").GetComponent<Transform>());
@@ -42,6 +43,7 @@ public class Level : MonoBehaviour
 
     void createColorChanger()
     {
+        //why is this if statement here. maybe need to set colorchanger elsewhere. might cause bugs with new state design
         if(GameObject.FindWithTag("ColorChanger"))
         {
             colorChanger = GameObject.FindWithTag("ColorChanger").GetComponent<Transform>();
@@ -60,6 +62,7 @@ public class Level : MonoBehaviour
 
     void createSmallCircle()
     {
+        //why is this if statement here. maybe need to set colorchanger elsewhere. might cause bugs with new state design
         if (GameObject.FindWithTag("SmallCircle"))
         {
             smallCircle = GameObject.FindWithTag("SmallCircle").GetComponent<Transform>();

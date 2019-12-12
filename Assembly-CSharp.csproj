@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\Level.cs" />
     <Compile Include="Assets\Scripts\LevelState.cs" />
+    <Compile Include="Assets\Scripts\NextState.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Rotator.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
