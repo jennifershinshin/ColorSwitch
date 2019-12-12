@@ -5,6 +5,7 @@ using UnityEngine;
 public class Level : MonoBehaviour
 {
     private static Level _instance;
+    private LevelState currentState;
     private Transform colorChanger;
     private Transform smallCircle;
 
@@ -12,6 +13,11 @@ public class Level : MonoBehaviour
     public GameObject colorChangerPrefab;
 
     Vector3 newLevelPosition = new Vector3(0, 3, 0);
+
+    public Level()
+    {
+        currentState = new CurrentState();
+    }
 
     public static Level Instance { get { return _instance; } }
 
@@ -33,10 +39,7 @@ public class Level : MonoBehaviour
         createColorChanger();
         createSmallCircle();
     }
-    private void Start()
-    {
-        
-    }
+
     void createColorChanger()
     {
         if(GameObject.FindWithTag("ColorChanger"))
@@ -71,5 +74,15 @@ public class Level : MonoBehaviour
     public Transform getSmallCircle()
     {
         return smallCircle;
+    }
+
+    public void setState(LevelState newState)
+    {
+        currentState = newState;
+    }
+
+    public void doStateAction()
+    {
+        currentState.execute(this);
     }
 }
