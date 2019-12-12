@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour
     public Transform camera;
     public Transform player;
     public GameObject levelPrefab;
-
+    public Vector3 offset = new Vector3(0,3,0);
 
     private void Awake()
     {
@@ -24,7 +24,7 @@ public class Spawner : MonoBehaviour
         //TODO: check for Level. level must always be available except for when its not
         if(!doesLevelExist())
         {
-            Instantiate(levelPrefab, player.position, Quaternion.identity);
+            Instantiate(levelPrefab, player.position + offset, Quaternion.identity);
             Level = GameObject.FindWithTag("Level");
         }
     }

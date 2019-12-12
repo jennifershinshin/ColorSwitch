@@ -11,7 +11,7 @@ public class Level : MonoBehaviour
     public GameObject smallCirclePrefab;
     public GameObject colorChangerPrefab;
 
-    Vector3 newLevelPosition = new Vector3(0, 4, 0);
+    Vector3 newLevelPosition = new Vector3(0, 3, 0);
 
     public static Level Instance { get { return _instance; } }
 
