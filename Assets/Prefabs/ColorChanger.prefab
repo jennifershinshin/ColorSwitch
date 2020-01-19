@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4562030741315169481}
   - component: {fileID: 4562030741315169480}
   - component: {fileID: 4670966064076116915}
+  - component: {fileID: -6013011196059307772}
   m_Layer: 0
   m_Name: ColorChanger
   m_TagString: ColorChanger
@@ -39,7 +40,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4562030741315169487}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -49,7 +50,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 80f88c87c60440345a71eedea2b86515, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,3 +98,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.09
+--- !u!114 &-6013011196059307772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4562030741315169487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbc570882232af941acca98dfd4f5798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

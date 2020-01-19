@@ -4,74 +4,21 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
-    private static Level _instance;
     private LevelState currentState;
-    private Transform colorChanger;
     private Transform smallCircle;
 
+    public static Level level;
     public GameObject smallCirclePrefab;
-    public GameObject colorChangerPrefab;
-
-    Vector3 newLevelPosition = new Vector3(0, 3, 0);
 
     public Level()
     {
         currentState = new NextState();
     }
 
-    public static Level Instance { get { return _instance; } }
-
-    private void Awake()
+    void Awake()
     {
-        currentState = new NextState();
-        if (_instance != null && _instance != this)
-        {
-            Destroy(this.gameObject);
-            Destroy(GameObject.FindWithTag("ColorChanger").GetComponent<Transform>());
-            Destroy(GameObject.FindWithTag("SmallCircle").GetComponent<Transform>());
-        }
-        else
-        {
-            _instance = this;
-        }
-        //Should I instantiate level. or doesnt it already do it in Spawner. maybe move it to here as well..
-        //maybe that wouldnt make sense bc if its instantiated, awake runs.
-        //I may not need these bc i think if i instantiate level, the children will also be created
-        createColorChanger();
-        createSmallCircle();
-    }
-
-    void createColorChanger()
-    {
-        //why is this if statement here. maybe need to set colorchanger elsewhere. might cause bugs with new state design
-        if(GameObject.FindWithTag("ColorChanger"))
-        {
-            colorChanger = GameObject.FindWithTag("ColorChanger").GetComponent<Transform>();
-        }
-        else
-        {
-            GameObject colorChangerGO = Instantiate(colorChangerPrefab, this.transform.position + newLevelPosition, Quaternion.identity) as GameObject;
-            colorChanger = colorChangerGO.GetComponent<Transform>();
-        }
-    }
-
-    public Transform getColorChanger()
-    {
-        return colorChanger;
-    }
-
-    void createSmallCircle()
-    {
-        //why is this if statement here. maybe need to set colorchanger elsewhere. might cause bugs with new state design
-        if (GameObject.FindWithTag("SmallCircle"))
-        {
-            smallCircle = GameObject.FindWithTag("SmallCircle").GetComponent<Transform>();
-        }
-        else
-        {
-            GameObject smallCircleGO = Instantiate(smallCirclePrefab, this.transform.position + newLevelPosition, Quaternion.identity) as GameObject;
-            smallCircle = smallCircleGO.GetComponent<Transform>();
-        }
+        level = this;
+        //currentState = new NextState();
     }
 
     public Transform getSmallCircle()
@@ -84,8 +31,14 @@ public class Level : MonoBehaviour
         currentState = newState;
     }
 
+    public LevelState getState()
+    {
+        return currentState;
+    }
+
     public void doStateAction()
     {
+        Debug.Log(currentState);
         currentState.execute(this);
     }
 }

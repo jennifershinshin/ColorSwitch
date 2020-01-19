@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class Player : MonoBehaviour
         if(col.tag == "ColorChanger")
         {
             SetRandomColor();
-             Destroy(GameObject.FindWithTag("Level"));
+            UpdateLevels();
             return;
         }
         if(col.tag != currentColor)
@@ -65,5 +66,10 @@ public class Player : MonoBehaviour
                 sr.color = colorPink;
                 break;
         }
+    }
+
+    void UpdateLevels()
+    {
+        Level.level.doStateAction();
     }
 }
