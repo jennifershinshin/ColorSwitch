@@ -7,6 +7,6 @@ public class CurrentState : LevelState
     public void execute(Level level)
     {
         Debug.Log("Current State");
-        //state = deadstate
+        level.setState(new DeadState());
     }
 }

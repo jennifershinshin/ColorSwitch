@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Level : MonoBehaviour
 {
@@ -38,7 +36,8 @@ public class Level : MonoBehaviour
 
     public void doStateAction()
     {
-        Debug.Log(currentState);
         currentState.execute(this);
+        //could also change state here
+        //if(currentState = Nextstate) change to current
     }
 }
