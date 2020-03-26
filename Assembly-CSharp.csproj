@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\CurrentState.cs" />
     <Compile Include="Assets\Scripts\DeadState.cs" />
     <Compile Include="Assets\Scripts\FollowPlayer.cs" />
+    <Compile Include="Assets\Scripts\GameMaster.cs" />
     <Compile Include="Assets\Scripts\Level.cs" />
     <Compile Include="Assets\Scripts\LevelState.cs" />
     <Compile Include="Assets\Scripts\NextState.cs" />

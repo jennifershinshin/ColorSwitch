@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
         if(col.tag == "ColorChanger")
         {
             SetRandomColor();
-            UpdateLevels();
+            GameMaster.gm.UpdateLevels();
             return;
         }
         if(col.tag != currentColor)
@@ -66,10 +66,5 @@ public class Player : MonoBehaviour
                 sr.color = colorPink;
                 break;
         }
-    }
-
-    void UpdateLevels()
-    {
-        Level.level.doStateAction();
     }
 }

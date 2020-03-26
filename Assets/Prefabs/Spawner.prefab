@@ -49,6 +49,6 @@ MonoBehaviour:
     type: 3}
   camera: {fileID: 0}
   player: {fileID: 0}
-  offset: {x: 0, y: 6, z: 0}
-  ColorChangerOffset: {x: 0, y: 3, z: 0}
+  offset: {x: 0, y: 6.5, z: 0}
+  ColorChangerOffset: {x: 0, y: 3.3, z: 0}
   startGameOffset: {x: 0, y: 10, z: 0}

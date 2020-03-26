@@ -2,21 +2,14 @@
 
 public class Level : MonoBehaviour
 {
-    private LevelState currentState;
+    public LevelState currentState;
     private Transform smallCircle;
 
-    public static Level level;
     public GameObject smallCirclePrefab;
 
     public Level()
     {
         currentState = new NextState();
-    }
-
-    void Awake()
-    {
-        level = this;
-        //currentState = new NextState();
     }
 
     public Transform getSmallCircle()
