@@ -11,6 +11,7 @@ TagManager:
   - ColorChanger
   - SmallCircle
   - Level
+  - GameMaster
   layers:
   - Default
   - TransparentFX

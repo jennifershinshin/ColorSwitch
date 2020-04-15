@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class GameMaster : MonoBehaviour
 {
-    public static GameMaster gm;
-
     private List<Level> levels;
+    public static GameMaster gm;
 
     // Start is called before the first frame update
     void Awake()
     {
+        gm = this;
         levels = new List<Level>();
         GameObject[] startingLevels = GameObject.FindGameObjectsWithTag("Level");
         for(int i = 0; i < startingLevels.Length; i++)
@@ -32,7 +32,8 @@ public class GameMaster : MonoBehaviour
 
     public void UpdateLevels()
     {
-        for(int i = 0; i < levels.Count; i++)
+        int startingLevelsCount = levels.Count;
+        for(int i = 0; i < startingLevelsCount; i++)
         {
             levels[i].doStateAction();
         }

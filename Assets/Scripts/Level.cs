@@ -2,10 +2,10 @@
 
 public class Level : MonoBehaviour
 {
-    public LevelState currentState;
     private Transform smallCircle;
 
     public GameObject smallCirclePrefab;
+    public LevelState currentState;
 
     public Level()
     {
