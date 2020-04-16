@@ -37,5 +37,10 @@ public class GameMaster : MonoBehaviour
         {
             levels[i].doStateAction();
         }
+
+        for(int i = 0; i < startingLevelsCount; i++)
+        {
+            Debug.Log(levels[i].getState());
+        }
     }
 }

@@ -4,7 +4,7 @@ public class DeadState : LevelState
 {
     public void execute(Level level)
     {
-        Debug.Log("Dead State");
+        //Debug.Log("Dead State");
         GameMaster.gm.RemoveLevel(level);
         Object.Destroy(level.GetComponent<GameObject>());
     }

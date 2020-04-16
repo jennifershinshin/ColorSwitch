@@ -6,8 +6,9 @@ public class NextState : LevelState
 {
     public void execute(Level level)
     {
-        Debug.Log("Next State");
+        //Debug.Log("Next State");
         level.setState(new CurrentState());
+        //Debug.Log("changed to " + level.getState());
         Spawner.spawner.spawnLevel(level);
     }
 }
