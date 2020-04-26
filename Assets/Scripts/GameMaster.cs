@@ -7,7 +7,6 @@ public class GameMaster : MonoBehaviour
     private List<Level> levels;
     public static GameMaster gm;
 
-    // Start is called before the first frame update
     void Awake()
     {
         gm = this;
@@ -18,6 +17,10 @@ public class GameMaster : MonoBehaviour
             Level tempLevel = startingLevels[i].GetComponent<Level>();
             AddLevel(tempLevel);
         }
+
+        //At start of game, CurrentLevel's state is NextState, so change it to CurrentState
+        Level currLevel = GameObject.Find("CurrentLevel").GetComponent<Level>();
+        currLevel.setState(new CurrentState());
     }
 
     public void AddLevel(Level level)
@@ -27,20 +30,29 @@ public class GameMaster : MonoBehaviour
 
     public void RemoveLevel(Level level)
     {
+        Debug.Log("RemoveLevel: " + levels.Count + ", " + levels.IndexOf(level));
         levels.Remove(level);
     }
 
     public void UpdateLevels()
     {
+        /* Don't execute the newly added levels or else there will be an infitine loop on NewState.cs
+         * So this only executes the levels that already existed.*/
         int startingLevelsCount = levels.Count;
-        for(int i = 0; i < startingLevelsCount; i++)
+        Debug.Log(startingLevelsCount);
+        for (int i = 0; i < startingLevelsCount; i++)
+        {
+            Debug.Log(levels[i].getState());
+        }
+        for (int i = 0; i < startingLevelsCount; i++)
         {
             levels[i].doStateAction();
         }
 
-        for(int i = 0; i < startingLevelsCount; i++)
-        {
-            Debug.Log(levels[i].getState());
-        }
+        //Debug.Log(startingLevelsCount);
+        //for (int i = 0; i < startingLevelsCount; i++)
+        //{
+        //    Debug.Log(levels[i].getState());
+        //}
     }
 }
