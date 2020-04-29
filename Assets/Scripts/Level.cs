@@ -30,7 +30,5 @@ public class Level : MonoBehaviour
     public void doStateAction()
     {
         currentState.execute(this);
-        //could also change state here
-        //if(currentState = Nextstate) change to current
     }
 }

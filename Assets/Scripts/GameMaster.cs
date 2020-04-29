@@ -39,15 +39,7 @@ public class GameMaster : MonoBehaviour
         /* Don't execute the newly added levels or else there will be an infitine loop on NewState.cs
          * So this only executes the levels that already existed.*/
         int startingLevelsCount = levels.Count;
-        Debug.Log(startingLevelsCount);
-        for (int i = 0; i < startingLevelsCount; i++)
-        {
-            Debug.Log(levels[i].getState());
-        }
-        if (startingLevelsCount == 3)
-        {
-             Debug.Log("hey");
-        }
+
         for (int i = startingLevelsCount - 1; i >= 0; --i)
         {
             levels[i].doStateAction();

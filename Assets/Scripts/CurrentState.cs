@@ -6,8 +6,6 @@ public class CurrentState : LevelState
 {
     public void execute(Level level)
     {
-        //Debug.Log("Current State");
         level.setState(new DeadState());
-        //Debug.Log("changed to " + level.getState());
     }
 }

@@ -10,12 +10,8 @@ public class Spawner : MonoBehaviour
     public GameObject levelPrefab;
     public GameObject ColorChangerPrefab;
 
-    //public Transform camera;
-    //public Transform player;
-
     public Vector3 offset;// = new Vector3(0,6.5f,0);
     public Vector3 ColorChangerOffset;// = new Vector3(0,2f,0);
-    //public Vector3 startGameOffset = new Vector3(0,10,0);
 
     /*
      * Instantiating the game
@@ -23,16 +19,6 @@ public class Spawner : MonoBehaviour
     private void Awake()
     {
         spawner = this;
-        //Level = GameObject.FindWithTag("Level");
-
-        //LevelState setToCurrent = new CurrentState();
-        //Level.GetComponent<Level>().setState(setToCurrent);
-
-        //Instantiate(levelPrefab, player.position + startGameOffset, Quaternion.identity);
-
-        //find Level(contains smallCircle and colorChanger)
-        // find colorChanger. get position of colorChanger.
-        //maybe only have one colorChanger in world
     }
 
     public void spawnLevel(Level level)
