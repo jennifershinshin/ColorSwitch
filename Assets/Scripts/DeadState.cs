@@ -6,6 +6,6 @@ public class DeadState : LevelState
     {
         //Debug.Log("Dead State");
         GameMaster.gm.RemoveLevel(level);
-        Object.Destroy(level.GetComponent<GameObject>());
+        GameObject.Destroy(level.gameObject);
     }
 }

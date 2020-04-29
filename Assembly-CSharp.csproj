@@ -63,7 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\ColorChanger.cs" />
     <Compile Include="Assets\Scripts\CurrentState.cs" />
     <Compile Include="Assets\Scripts\DeadState.cs" />
     <Compile Include="Assets\Scripts\FollowPlayer.cs" />

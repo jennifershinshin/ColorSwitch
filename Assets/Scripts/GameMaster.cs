@@ -30,7 +30,7 @@ public class GameMaster : MonoBehaviour
 
     public void RemoveLevel(Level level)
     {
-        Debug.Log("RemoveLevel: " + levels.Count + ", " + levels.IndexOf(level));
+        Debug.Log("total levels #: " + levels.Count + ", remove at index: " + levels.IndexOf(level));
         levels.Remove(level);
     }
 
@@ -44,15 +44,13 @@ public class GameMaster : MonoBehaviour
         {
             Debug.Log(levels[i].getState());
         }
-        for (int i = 0; i < startingLevelsCount; i++)
+        if (startingLevelsCount == 3)
+        {
+             Debug.Log("hey");
+        }
+        for (int i = startingLevelsCount - 1; i >= 0; --i)
         {
             levels[i].doStateAction();
         }
-
-        //Debug.Log(startingLevelsCount);
-        //for (int i = 0; i < startingLevelsCount; i++)
-        //{
-        //    Debug.Log(levels[i].getState());
-        //}
     }
 }
