@@ -5,11 +5,11 @@ public class Level : MonoBehaviour
     private Transform smallCircle;
 
     public GameObject smallCirclePrefab;
-    public LevelState currentState;
+    public LevelState levelState;
 
     public Level()
     {
-        currentState = new NextState();
+        levelState = new NextState();
     }
 
     public Transform getSmallCircle()
@@ -19,16 +19,16 @@ public class Level : MonoBehaviour
 
     public void setState(LevelState newState)
     {
-        currentState = newState;
+        levelState = newState;
     }
 
     public LevelState getState()
     {
-        return currentState;
+        return levelState;
     }
 
     public void doStateAction()
     {
-        currentState.execute(this);
+        levelState.execute(this);
     }
 }
